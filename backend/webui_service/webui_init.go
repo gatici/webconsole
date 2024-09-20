@@ -226,6 +226,7 @@ func (webui *WEBUI) Start() {
 	var host string = "0.0.0.0:9876"
 	confServ := &gServ.ConfigServer{}
 	go gServ.StartServer(host, confServ, configMsgChan)
+	initLog.Infoln("GRPC Server started")
 
 	// fetch one time configuration from the simapp/roc on startup
 	// this is to fetch existing config
